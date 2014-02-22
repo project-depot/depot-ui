@@ -1,5 +1,60 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  div.top
+    div.block.animated.fadeInDown
+      div.vcenter
+        div.row
+          div.column.small-12.small-centered.text-center
+            div.intro
+              img.logo(src='images/logo-white.png')
+              div.row.hero
+                div.column.small-12
+                  h4.tk-museo-slab Depot.
+                  span cloud storage made simple
+              div.row.buttons
+                div.column.small-12
+                  a.sign-up.small.button Sign Up
+                  a.sign-in.small.button Sign In
+
+    //- div.row.more
+    //-   div.column.small-12.small-centered.text-center
+    //-     a(href="#about")
+    //-       span Learn more
+    //-       i.fa-chevron-down
+    div.row.more.footer.animated.fadeIn
+      div.column.small-12.small-centered.text-center
+          footer
+            span Made by Team Depot &nbsp;&nbsp;(Zach Latta, Shilpa Yarlagadda, Keshav Varma)&nbsp;&nbsp; at LAUNCH
+
+
+  div.form.form-login
+    form(action='/login', method='post')
+      label Email
+      input(type="text", name="email", placeholder="john@doe.com")
+      label Password
+      input(type="text", name="password", placeholder="●●●●●")
+      button.cancel-login.small.button Cancel
+      button.sign-in-submit.small.button(type="submit") Sign In
+
+  div.form.form-register
+    form(action='/register', method='post')
+      label Email
+      input(type="text", name="email", placeholder="john@doe.com")
+      label Password
+      input(type="text", name="password", placeholder="●●●●●")
+      button.cancel-register.small.button Cancel
+      button.sign-up-submit.small.button(type="submit") Sign Up
+
+
+  //- div.about(id="about")
+  //-   div.block.animated.fadeInDown
+  //-     div.vcenter
+  //-       div.row
+  //-         div.column.small-12.small-centered.text-center
+  //-           span cloud storage made simple
+
+  //-   div.row.more.footer
+  //-     div.column.small-12.small-centered.text-center
+  //-         footer
+  //-           span Made by Team Depot &nbsp;&nbsp;(Zach Latta, Shilpa Yarlagadda, Keshav Varma)&nbsp;&nbsp; at LAUNCH

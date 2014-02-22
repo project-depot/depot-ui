@@ -10,15 +10,16 @@ exports = module.exports = function(app, passport) {
 	// Auth
 	app.get('/register', user.register);
 	app.post('/register', user.registerPost);
-	app.get('/login', user.login);
 	app.post('/login',
   	passport.authenticate('local', { successRedirect: '/',
-                                   failureRedirect: '/login',
+                                   failureRedirect: '/',
                                    failureFlash: true })
 	);
 	app.get('/logout', user.logout);
 
-
+	// Dashboard
+	// app.get('/home', login.ensureLoggedIn('/'), index.home);
+	app.get('/home', index.home);
 
 	// User
 	app.get('/me', login.ensureLoggedIn('/'), user.info);

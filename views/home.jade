@@ -1,0 +1,34 @@
+extends layout
+
+block content
+  nav.top-bar(data-topbar='')
+      ul.title-area
+        li.name
+          div.image-backdrop
+            a(href='/home')
+              img(src='/images/logo-white.png')
+        li.toggle-topbar.menu-icon
+          a(href='#') Menu
+      section.top-bar-section
+        ul.right
+          li.has-dropdown
+            a(href='#') user.email
+            ul.dropdown
+              li
+                a(href='/logout') Logout
+        ul.left
+          li
+            h4.depot Depot
+
+  div.row(style="margin-top: 20px;")
+    div.column.medium-3
+      ul.side-nav
+        li.active
+          a(href='#') Account
+        li
+          a(href='#') Files
+        li.divider
+        li
+          a(href='#') Help
+    div.column.medium-9
+      p Test
