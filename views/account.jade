@@ -1,4 +1,17 @@
 extends home
 
 block innercontent
-  p Account
+  .panel.radius
+      h3(style="display: inline-block") Welcome to Depot
+      a.button.small.secondary.split.pull-right(href='#', style="font-size: 1.2em; margin-top: -5px; padding-top: 15px; padding-bottom: 15px; ")
+        | Credit: $25.00
+        span(data-dropdown='drop')
+      br
+      ul#drop.f-dropdown(data-dropdown-content='')
+        li
+          a(href='#') Recharge
+
+
+
+  div(style="margin-left: 10px;")
+    p Depot is a backend-agnostic cloud storage system.
