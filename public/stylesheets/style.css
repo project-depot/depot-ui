@@ -109,7 +109,6 @@ img.logo {
   line-height: 1.7;
   border-radius: 0;
   border: none;
-  border-top: 1px solid transparent !important;
   border-bottom: 1px solid #ddd;
   -webkit-box-shadow: none;
   box-shadow: none;
@@ -123,9 +122,18 @@ img.logo {
   background-color: #dbdbdb;
   color: #000;
   margin-right: 5px;
+  float: left;
+}
+.form button.sign-up-submit {
+  margin-left: 5px;
+  float: right;
 }
 .form button.sign-in-submit {
   margin-left: 5px;
+  float: right;
+}
+.form-register {
+  height: 316px;
 }
 .about {
   height: 100%;
@@ -210,4 +218,7 @@ h4.depot {
 }
 .top-bar-section li:not(.has-form) a:not(.button) {
   line-height: 50px;
+}
+.error-input {
+  border-bottom: 1px solid #df0000 !important;
 }

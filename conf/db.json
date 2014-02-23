@@ -1,0 +1,5 @@
+{
+  "_comment": "Location of MongoDB instance",
+  "url": "mongodb://127.0.0.1:27017/depot",
+  "sessionSecret": "076ee61d63aa10a125ea872411e433b9"
+}

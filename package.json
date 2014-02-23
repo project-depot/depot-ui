@@ -17,6 +17,8 @@
     "jade": "*",
     "stylus": "*",
     "passport": "*",
+    "mongoose": "*",
+    "connect-mongo": "*",
     "passport-local": "*",
     "connect-ensure-login": "*",
     "konphyg": "*",

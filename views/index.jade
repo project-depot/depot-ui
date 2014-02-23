@@ -29,22 +29,24 @@ block content
 
 
   div.form.form-login
-    form(action='/login', method='post')
+    form(action='/login', method='post', id="login")
       label Email
-      input(type="text", name="email", placeholder="john@doe.com")
+      input(type="text", name="username", placeholder="john@doe.com")
       label Password
-      input(type="text", name="password", placeholder="●●●●●")
-      button.cancel-login.small.button Cancel
+      input(type="password", name="password", placeholder="●●●●●")
       button.sign-in-submit.small.button(type="submit") Sign In
+      button.cancel-login.small.button Cancel
 
   div.form.form-register
-    form(action='/register', method='post')
+    form(action='/register', method='post', id="register")
       label Email
-      input(type="text", name="email", placeholder="john@doe.com")
+      input(type="text", name="username", placeholder="john@doe.com")
       label Password
-      input(type="text", name="password", placeholder="●●●●●")
-      button.cancel-register.small.button Cancel
+      input(type="password", name="password", placeholder="●●●●●")
+      label Confirm Password
+      input(type="password", name="password-confirm", placeholder="●●●●●")
       button.sign-up-submit.small.button(type="submit") Sign Up
+      button.cancel-register.small.button(type="cancel") Cancel
 
 
   //- div.about(id="about")

@@ -8,18 +8,25 @@ exports = module.exports = function(app, passport) {
 	app.get('/', index.index);
 
 	// Auth
-	app.get('/register', user.register);
 	app.post('/register', user.registerPost);
-	app.post('/login',
-  	passport.authenticate('local', { successRedirect: '/',
-                                   failureRedirect: '/',
-                                   failureFlash: true })
-	);
+	app.post('/login', function(req, res, next) {
+  	passport.authenticate('local', function(err, user, info) {
+  		console.log(user);
+	    if (err) { res.send(500) }
+	    if (!user) { res.send(500) }
+	    req.login(user, function (error) {
+        if (error) {
+          throw error;
+        }
+        res.send(200)
+      });
+	  })(req, res, next);
+	});
 	app.get('/logout', user.logout);
 
 	// Dashboard
-	// app.get('/home', login.ensureLoggedIn('/'), index.home);
-	app.get('/home', index.home);
+	app.get('/home', login.ensureLoggedIn('/'), index.home);
+	// app.get('/home', index.home);
 
 	// User
 	app.get('/me', login.ensureLoggedIn('/'), user.info);

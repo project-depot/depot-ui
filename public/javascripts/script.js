@@ -63,9 +63,31 @@ $(function() {
 
   })
 
-  function addAnim(e, x) {
-    e.removeClass('animated').addClass(x + ' animated').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
-      $(this).removeClass('animated');
-    });
-  };
+  var options = {
+        url: '/register',
+        type: 'post',
+        success:   function(){
+          window.location.replace('/home')
+        },
+        error: function(){
+          $('#register input').addClass('error-input');
+        }
+    };
+
+  $('#register').ajaxForm(options);
+
+  var options = {
+        url: '/login',
+        type: 'post',
+        success:   function(){
+          window.location.replace('/home')
+        },
+        error: function(){
+          $('#login input').addClass('error-input');
+        }
+    };
+
+
+  $('#login').ajaxForm(options);
+
 });
