@@ -41,6 +41,13 @@ exports.registerPost = function(req, res){
         });
 
       });
+    } else {
+      req.login(user, function (error) {
+          if (error) {
+            throw error;
+          }
+          res.send(200)
+        });
     }
   });
 
