@@ -23,12 +23,14 @@ block content
   div.row(style="margin-top: 20px;")
     div.column.medium-3
       ul.side-nav
-        li.active
-          a(href='#') Account
-        li
-          a(href='#') Files
+        li(class= (active == "account") ? "active": "")
+          a(href='/account') Account
+        li(class= (active == "files") ? "active": "")
+          a(href='/files') Files
+        li(class= (active == "ftp") ? "active": "")
+          a(href='/ftp') FTP
         li.divider
         li
           a(href='#') Help
     div.column.medium-9
-      p Test
+      block innercontent

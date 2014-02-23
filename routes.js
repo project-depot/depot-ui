@@ -26,6 +26,9 @@ exports = module.exports = function(app, passport) {
 
 	// Dashboard
 	app.get('/home', login.ensureLoggedIn('/'), index.home);
+  app.get('/account', login.ensureLoggedIn('/'), index.account);
+  app.get('/files', login.ensureLoggedIn('/'), index.files);
+  app.get('/ftp', login.ensureLoggedIn('/'), index.ftp);
 	// app.get('/home', index.home);
 
 	// User
